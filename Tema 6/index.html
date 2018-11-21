@@ -12,6 +12,46 @@
 
     <h1>Estamos en  el Tema 6</h1>
 
-    <script src="main.js"></script>
+    <script>
+    
+        // ALGUNOS METODOS NUMERICOS
+
+            /*
+                toPrecision(@param (numero de decimales a mostrar)) -> Devuelve un numero con los decimales deseados pero sin redondear.
+
+                toString(@param (base numerica)) -> Devuelve una cadena con el número en la base (hexadecimal, binaria…) que determinemos.     
+                                @param => numero de bits. 2,4,8,16
+
+                parseFloat(@param ( string)) -> Devuelve un número decimal o entero partiendo de una cadena.
+                                @param => string en numero.
+
+                parseInt(@param1 (string), @param2 (base numerica)) => Devuelve un número entero partiendo de una cadena.
+                                        Además, nos permite seleccionar la base númerica sobre la que trabajaremos (binaria
+                                        con 2, hexadecimal con 16, etc…). Por defecto se utiliza la base 10 (decimal).
+    
+
+        */
+
+
+        let a = 6.1245;
+        let b = 9.456789;
+        let c = 117;
+        let d = "6.45678";
+
+        document.write(a.toPrecision(3) + "<br>");
+        document.write(b.toPrecision(2) + "<br>");
+        document.write(c.toString(2) + "<br>");
+        document.write(parseFloat("6.245 hdfjkewhfkj") + "<br>"); //retorna solo y solo el numero de la cadena. 
+        document.write(parseInt("1110101 hefjkhwejkf", 2) + "<br>"); //retorna solo y solo si el numero de la cadena. 
+
+
+        function binaria(z){
+
+            alert(z.toString(2));
+        }
+
+        binaria(200);
+    
+    </script>
 </body>
 </html>
