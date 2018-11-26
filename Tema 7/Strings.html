@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <h1>Estamos en el Tema 7 "Strings"</h1>
+
+        <pre style="background-color: lightblue;">
+
+            <ul> <h3>Propiedades</h3>
+                <li>length: nos devuleve el tamano del string.</li>
+            </ul>
+
+            <ul> <h3>Metodos</h3>
+                <li>fromCharCode(caracteres unicode a mostrar)</li>
+                <li>charArt(@paran int posicion que queremos buscar en el String</li>
+                <li>concat( todos los Strings a concatenar)</li>
+            </ul>
+
+        </pre>
+       
+        <script>
+            
+            // PROPIEDADES DE LOS STRINGS
+
+            /**
+            
+                length -> nos devuelve el tamano del string
+                        
+              */
+
+            const salto = "<br>";
+            let saludo = "Hola mundo";
+            const nombre = " ,Luis";
+
+            console.log(saludo.length + salto);
+
+            // String con Unicode en el String
+            console.log("Este es mi mensaje con Unicode " + String.fromCharCode(8856) + salto);
+
+            // Buscar un solo caracter
+
+            console.log(saludo.charAt(0));
+
+            
+            // concatena el texto de varios Strings
+
+            console.log(saludo.concat(nombre));
+
+
+            // Devuelve la posición del elemento si es capaz de localizarlo o -1 en caso contrario.
+
+            console.log(saludo.indexOf("a"));
+            console.log(saludo.indexOf("o")); // Primera "o" que encuentra
+
+
+            // .lastIndexOf() Devuelve la ultima localización del elemento si es capaz de encontrarlo o -1 en caso contrario.
+
+            console.log(saludo.lastIndexOf("o")); // Ultima "o" que encuentra.
+
+            // .trim() Elimina espacios vacíos al principio y al final de la cadena.
+
+            let s = "    hdsfjkdsfjks    ";
+
+            console.log(s.trim());
+
+
+            // slide(inicio, final) devuelve el string desde el inicio al final el que marquemos en los args. incluye el inicio, pero el final.
+
+            console.log(saludo.slice(0,4));
+            console.log(saludo.slice(5, 10 ));
+
+            // split(separador del string), parte el String y lo mete en un array.
+
+            const dias = "Lunes,Martes,Miercoles,Jueves,Viernes";
+
+            console.log(dias.split(','));
+
+            let dia = dias.split(',');
+
+            document.write(dia[1]);
+
+
+            //.substring() Devuelve los caracteres de una cadena, comenzando en la localización especificada hasta el numero de caracteres contando desde 0 hasta el coincidir con el paramentro 2.
+
+            let c = "Javascript Inpirate";
+
+            console.log(c.substring(10, 16));
+
+
+            // .substr() devuelve un string, el cual comienza con la posicion del argumento 1 y ademas devuelve el numero de posiciones de posiciones del argumento 2.
+
+            console.log(c.substr(0,2));
+            
+              
+        
+        
+        </script>
+    </body>
+</html>
