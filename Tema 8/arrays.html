@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arrays Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+</head>
+<body>
+    
+
+    <script>
+
+        // ARRAYS EN JAVASCRIPT
+
+        // Creando un array
+
+        let nombre = [];
+
+        // Creando un array que no este vacio.
+
+        let coches = ["BMW", "Cadillac", "Ferrari"];
+
+        // Mostrar un array ya sea por consola o en imprimiendo en pantalla mediante su indice.
+
+        console.log(coches[1]);
+
+        // Cambiando los valores de los indices.
+
+        coches[0] = "Porsche";
+
+        console.log(coches[0]);
+
+
+        // Borrando elementos de un array, pero dejando el hueco con "undefined" o delete, es decir no alterando el orden del Array.
+
+        //coches[0] = undefined;  // Primera forma de hacerlo.
+        delete coches[0];           // segunda forma.
+        console.log(coches[0]);
+        console.log(coches.length);
+
+
+        // Eliminando un elemento de un array alterando el orden del mismo. Mediante la funcion slide().
+
+            // slice(@param1 int posicion a eleminar, @param2 int cuanto queremos eliminar)
+
+        let names = ['Luis', "Hugo", "Raluca", "Luisito"];
+
+        names.splice(0,1); // 
+
+        console.log("El array names tiene una longitud de:" + names.length);
+
+
+        // Recorriendo array con un bucle "for".
+
+        for (let i = 0; i < names.length; i++) {
+            
+                document.write(names[i] + "<br>");
+        }
+
+
+        // METODOS
+
+        let coche = 12;
+
+        // isArray() => nos devuelve true si es un array.
+
+       // alert(Array.isArray(coche));
+
+        // sort() => nos permite ordenar numericamente o alfabeticamente un array pasado como parametro.
+
+         let edades = [24,8,97,54,259];   
+
+        console.log(names.sort());
+        console.log(edades.sort());
+
+
+        // reverse() => invierte el orden de un array.
+
+        console.log(names.reverse());
+
+
+        // indexOf() => devuelve la posicion del elemento que le pasemos como parametro.
+
+        console.log(names.indexOf("Hugo")); // Hugo esta en la posicion numero 2.
+
+
+        // push() => anade nuevos elementos al final del array.
+
+        names.push('Thai');
+
+        console.log(names);
+
+        // unShift -> anade elementos al principio del array.
+
+        names.unshift('Pepito');
+
+        console.log(names);
+
+
+        // pop() => elimina el ultimo elemento del array.
+
+        names.pop();
+
+        console.log(names);
+
+        //shift => elemina el primer elemento del array.
+
+        names.shift();
+
+        console.log(names);
+        
+
+    </script>
+</body>
+</html>

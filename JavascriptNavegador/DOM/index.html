@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+</head>
+<body>
+    <h1>DOM</h1>
+
+    <h3>Objeto document</h3>
+
+    <pre style="background: lightblue;">
+
+        <p>Objeto "document", con el podemos acceder rapida y directamente a diferentes partes del DOM.</p>
+        <ul>Como por ejemplo:
+            <li>document.body</li>
+            <li>document.images</li>
+            <li>document.links</li>
+            <li>document.styleSheets</li>
+            <li>y un sinfin de propiedades mas...</li>
+        </ul>
+
+    </pre>
+    <br>
+
+    <h3>Nodos</h3>
+
+    <pre style="background: lightblue;">
+
+        <p>Un nodo es desde donde se ramifican o una etiqueta tiene uno o varias etiquetas hijas.</p>
+        <p>Un Elemento es cualquier etiqueta HTML.</p>
+        <ul>
+            <li>NodeType, nos dice el tipo de que es.
+                <ul>
+                    <li>Elemento nos devuelve "1".</li>
+                    <li>Texto nos devuelve "3"</li>
+                    <li>Comentario nos devuelve "8".</li>
+                </ul>
+            </li>
+        </ul>
+        
+
+    </pre>
+    <br>
+
+    
+    <script>
+        
+        if(document.styleSheets.length === 0){
+
+           console.warn("No tienes hojas de estilos");
+        }
+    
+    
+    </script>
+    <script></script>
+</body>
+</html>
