@@ -111,7 +111,44 @@
         names.shift();
 
         console.log(names);
+
+
+        // METODOS AVANZADOS
         
+        // filter() => crea un nuevo array con los elementos que pasen la condicion de dicha funcion.
+
+        let age = [12, 24, 7, 45, 18, 65];
+
+        function mayorDeEdad(a){
+
+            return a >= 18;
+        }
+
+
+       console.log(age.filter(mayorDeEdad));
+
+
+       // forEach() => se ejecuta una funcion para cada elemento del array.
+
+        function output(element){
+
+           document.write(element.toUpperCase() + "<br>");
+        }
+       
+       names.forEach(output);
+
+
+       // map() => ejecuta una funcion sobre cada elemento del array. Retorna un array con modificacion hecha.
+
+
+      function out(element){
+
+            return element.toUpperCase();
+       }
+
+      var resultado = names.map(out);
+
+      console.log(resultado);
 
     </script>
 </body>
