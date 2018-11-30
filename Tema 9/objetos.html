@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obejtos en Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+
+
+    <h1>Estamos en objetos Literales Javascript</h1>
+
+    <script>
+    
+        // Como iniciar un objeto
+
+        let miObjeto = {}; // objeto vacio
+
+        // Objeto con propiedades y metodos
+
+        let coche = {
+
+            Fabricante: "Audi",
+            modelo: "RS6",
+            potencia: 600,
+            disponible: true,
+
+            dimeModelo : function(){
+
+                console.log(this.Fabricante + " " + this.modelo);
+            }
+        }
+
+
+        document.write(coche.Fabricante);
+        coche.dimeModelo();
+        
+        // Usando el operador delete para borrar una propiedad
+
+        delete coche.Fabricante; // La propiedad fabricante ya no existe en objeto "coche".
+
+        console.log(coche.Fabricante);
+
+
+        // METODOS
+
+        // defineProperties() => define nuevas propiedades o modifica las existentes del obejto que le pasemos como argumento.
+
+        // sintaxis:
+
+        var alumnos = {
+
+            nombre: "Luis",
+            edad: 48,
+            mayorEdad : true,
+
+        }
+               
+
+        Object.defineProperties(alumnos,{
+
+            "nombre": { value: "Raluca" },
+            "edad" : { writable: false},
+            "carnet" : {value: true}
+
+
+        });
+
+    
+
+        console.log(alumnos.nombre);
+        console.log(alumnos.edad);
+        console.log(alumnos.carnet);
+
+        
+    // getOwnPropertiesDescriptor() => retorna una decripcion de todas las propiedades y metodos del objeto
+    // pasado como parametro
+    // Sintaxis:
+
+    console.log(Object.getOwnPropertyDescriptor(alumnos, "edad"));
+
+
+    // getOwnPropertiesNames() => devuelve un array con todos las propiedades y metodos del obejto.
+
+    console.log(Object.getOwnPropertyNames(alumnos));
+
+
+    // Hacemos un pequeno ejercicio para ver si existe una propiedad dentro de un objeto.
+
+    function comparar(elemento){
+
+        if(elemento === "carnet"){
+
+            console.log(true);
+        }
+
+        
+    }
+
+    var arreglo = Object.getOwnPropertyNames(alumnos);
+
+    arreglo.forEach(comparar); // No puedo poner un else porque itera sobre las propiedades del objeto.
+
+
+
+    // hasOwnProperties() => devuelve true o false si la propiedad del objeto existe.
+
+
+    console.log(Object.hasOwnProperty(alumnos, "carnet"));
+
+
+    // toLocaleString() => devuelve el objeto en forma de string
+
+    console.log(Object.toLocaleString(alumnos));
+
+    </script>
+    
+</body>
+</html>
