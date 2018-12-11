@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eventos y varios objetos del navegador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <h1>Estamos en Eventos y varioos objetos del navegador</h1>
+
+
+    <script>
+        
+        // objeto history y alguno de sus metodos
+
+        // Podemos movernos hacia delante, atras o donbde queramos.
+
+        console.log(history.length) // optenemos la longitud del historial de la sesion actual (pestana)
+        //console.log(history.forward())
+        //console.log(history.back())
+
+
+        // Objeto window.navigator. Es un API que nos permite obtener  informacion sobre la maquina
+        // en la que se esta ejecutando el script.
+        // Algunos metodos del objeto navigator:
+        // appCodeName
+
+            console.log(window.navigator.appCodeName)
+            console.log(window.navigator.appName)
+            console.log(window.navigator.appVersion)
+            console.log(window.navigator.plataform)
+            console.log(window.navigator.product)
+            console.log(window.navigator.languages)
+            console.log(window.navigator.javaEnabled())
+           var plugins = window.navigator.plugins
+           console.log(plugins)
+           
+           // Vamos con un ejercicio para ver si el cliente tiene un plugin instalado en el navegador
+
+
+           if(plugins[0].name === 'Chrome PDF Plugin'){
+
+               console.log('El cliente si puede leer contenidos en PDF')
+
+           }else{
+
+               alert("EL clinte no tiene un lector PDF")
+           }
+
+           console.log(window.navigator.onLine) // Nos dice si el cliente esta conectado a internet.
+
+
+           // LEER MAS SOBRE EL OBJETO NAVIGATOR.
+
+
+           // Objeto screen
+
+
+           /**
+           Window.screen nos permite sacar toda la informacion del pantalla.
+           
+           */
+            console.log(window.screen.colorDepth)
+            console.log(window.screen.availWidth)
+            console.log(window.screen.width)
+
+
+            /**
+            window.location y  documen.location son lo mismo
+        
+            */
+
+            // Propiedades del window.location
+
+            const enlace = document.createElement('a')
+            enlace.href = 'http://www.mundonovacasa.com';
+
+            console.log(enlace.href)
+            console.log(enlace.protocol)
+            console.log(enlace.host)
+            console.log(enlace.hostname)
+            console.log(enlace.port)
+            console.log(enlace.pathname)
+            console.log(enlace.hash)
+            console.log(enlace.origin)
+    
+            // Metodos window.location
+
+            // window.reload(bool) -> recarga la pagina con o sin cache.
+
+           // buscar mas informacion del objeto window.location
+
+           
+    </script>
+</body>
+</html>

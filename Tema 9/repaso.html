@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Repaso Objetos</title>
+	
+</head>
+<body>
+
+	<h1>Estamos en repaso de Objetos</h1>
+
+
+
+	<script>
+		
+		// Creando un objeto
+		
+		let concesionario = {
+
+			marca: "Opel",
+			modelo: "Frontera",
+			precio: 8900,
+			enStock:true,
+
+			dimeModelo: function(){
+
+				console.log(this.marca + " " + this.modelo);
+			}, 
+
+
+			dimePrecio: function(){
+
+				console.log(this.marca + " " + this.modelo + ", precio: " + this.precio + " Euros");
+			}
+
+		}
+
+		// Imprimimos el modelo de coche en consola
+
+		concesionario.dimeModelo();
+		concesionario.dimePrecio();
+
+
+		// Ahora vamos a borrar una propiedad del obejto concesinario
+		
+		delete concesionario.precio;
+
+		console.log(concesionario.precio); // Como vemos la propiedad ya no esta definida en el objeto.
+
+
+
+		// Vamos a retornar una propiedad del objeto.
+		
+		console.log(Object.getOwnPropertyDescriptor(concesionario, "marca"));
+
+
+		// Ahora vamos a retornar si una propiedad existe a un objeto.
+		
+
+		var propiedades = Object.getOwnPropertyNames(concesionario);
+
+		//console.log(propiedades[3]);
+
+		if(propiedades[0] === 'marca'){
+
+			console.log("Si esta");
+
+		} else{
+
+			console.log("No se encuentra");
+		}
+
+
+		// Otro modo de hacer lo mismo.
+		
+
+		var car = Object.hasOwnProperty(concesionario, "enStock");
+
+		//console.log(car);
+
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
