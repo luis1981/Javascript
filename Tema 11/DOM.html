@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<body>
+    <h1 id="titulo">Estamos en DOM</h1>
+
+    <div>
+        <div>
+            <h3>Hols estamos en DOM</h3>
+        </div>    
+   </div>
+
+   <div id="box1" class="box1">
+       <h4>jwedfkljweflkw</h4>
+   </div>
+
+   <h5 id="subtitulo">He aqui un formulario</h5>
+    <form action="" name="carrito">
+        <input type="text">
+    </form>
+
+
+
+   <script>
+       
+       //Nos devuleve un Nodelist
+       const selector = document.querySelectorAll('div');
+
+       console.log(selector);
+
+
+       // Selectores tradicionales del DOM
+
+       // getElementById(string id)
+
+       const a = document.getElementById('titulo');
+
+       console.log(a);
+
+       // getElementByName(string atributo etiqueta name)
+
+       const b = document.getElementsByName('carrito');
+       console.log(b);
+
+
+       // getElementByTagName(string nombre etiqueta)
+
+       const c = document.getElementsByTagName('h1');
+
+       console.log(c);
+
+        // getElementByClassName(string nombre de la clase)
+
+       const d = document.getElementsByClassName('box1')
+
+       console.log(d)
+
+       //Metodos esenciales
+
+       // textContent -> nos devuelve el texto de una etiqueta html
+
+    const h5 = document.getElementById('subtitulo');    
+
+    console.log(h5.textContent) // nos muestra el texto del h5, observando que lleva los parentesis de una funcion
+
+    // classList.contains(string clase a buscar) -> Nos devuelve si la clase esta presente
+    // puede llevar add()
+    // puede remove()
+    // puede llevar toggle()
+
+    const clase = document.getElementById('box1')
+
+    console.log(clase.classList.contains('box1'))
+    console.log(clase.classList.remove('box1'))
+    console.log(clase.classList.add('box1'))
+    console.log(clase.classList.contains('box1')) // comprobamos de nuevo se ha anadido la clase "box1"
+
+
+    // innerHTML() devuelve o modifica la sintaxis HTML de un elemento.
+
+    console.log(h5.innerHTML)
+
+            // Podemos cambiar el contenido del elemento selecciondo
+
+            h5.innerHTML = "Esto es el contenido nuevo cambiado"
+
+            console.log(h5.innerHTML);
+
+    // getAtributte(strinf valor atributo) -> devuleve el valor de un atributo
+
+    console.log(clase.getAttribute('id'))
+
+    // setAtributte(string, atributo a poner, valor atributo) -> anade o modifica el valor de un atributo
+
+    clase.setAttribute('id','box5')
+    console.log(clase.getAttribute('id'))
+
+   </script> 
+</body>
+</html>
