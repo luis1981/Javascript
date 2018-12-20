@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Funciones Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+
+    <button type="button" id="boton">Click me!</button>
+
+    <script>
+
+      // sumar dos numeros
+      //multiplicar * 2
+      // restar 2
+
+    
+
+      function mulitplicar(num1, callback){
+
+          callback(num1 * 2)
+      }
+
+      function restar(num, callback){
+
+          callback(num - 2)
+      }
+
+     /* sumar(3, 5, function(resultadoSuma){
+
+        console.log(`EL resultado de la suma es ${resultadoSuma}`);
+
+            mulitplicar(resultadoSuma, function(resultadoMultiplicar){
+
+                console.log(`El resultado de la multiplicacion es de: ${resultadoMultiplicar}`)
+
+                restar(resultadoMultiplicar, function(resultadoRestar){
+
+                    console.log(`El resultado de la resta es de: ${resultadoRestar}`)
+                })
+
+            })
+      });*/
+
+
+        // Funciones en Javascript
+
+        // Como ejecutar funcion
+
+        function saludo(){
+
+            console.log("Hola desde la funcion \" saludo \" .");
+
+        }
+
+
+       /* var s = () => {
+
+            alert("Hola desde un alert");
+        }
+
+        // Ejecutamos las funciones
+
+        saludo();
+        s(); // Tenemos que anteponer los parentesis a la variable, si no se ejecutara
+
+*/
+        //Paso de patamentros a las funciones
+        
+
+        function nombreCompleto(nombre){
+
+            console.log(`Me llamo ${nombre}`);
+        }
+
+        //Ejecutamos la funcion  con parametros
+
+        nombreCompleto('Luis');
+
+
+        // funcion anonima con parametros
+
+        const nombreEdad = (nombre, edad) => {
+
+            console.log(`Hola, me llamo ${nombre} y tengo ${edad} anos.`);
+        }
+
+        // Ejecutamos la funcion anonima con paso de parametros.
+
+        nombreEdad('Luis', 34);
+
+        // funcion con parametros opcionales
+
+        function theWethear(temperatura, viento){
+
+                temperatura = temperatura || 0
+                viento = 0 | viento
+
+            console.log(`Tenemos una ${temperatura}C y un viento de ${viento} km/h`)
+        }
+
+        // Ejecutamos la funcion theWethear
+
+
+        theWethear(28, 5);
+
+
+
+        // funcion con parametro una funcion anonima
+
+       
+
+        function micoche(coche, precio){
+
+            console.log(`Mi coche es ${coche()} y tiene un precio de ${precio}`);
+        }
+
+        const coche = function(){
+            
+            return "Volvo";
+        }
+
+       
+        // Ejecutamos la funcion de arriba.
+
+
+        //micoche('coche', 23000 );
+
+
+        // Buenas practicas, se recomienda pasar un objeto si hay mas tres argumentos en una funcion.
+
+
+        const tipoCoche =[];
+
+
+        function c(datos){
+
+            tipoCoche.push({
+
+                    marca: datos.marca,
+                    potencia: datos.potencia,
+                    precio: datos.precio
+            });
+
+            
+        }
+
+        // ejecutamos la funcion de la siguiente manera, le pasamos un objeto como argumento.
+
+        c({marca:'Bmw', potencia:123, precio:62500});
+        console.log(tipoCoche)
+
+
+        // Funciones anonimas autoejecutas
+       /* (function(quien){
+
+            console.log(`Me llamo ${quien}`)
+        })('Luis');
+*/
+
+  /*      ( function (window) {
+
+            console.log(window)
+
+        })(window);
+*/
+
+
+        // Recursion
+
+        // La recursion consistes en en que una funcion se llame a si misma 
+        
+        //
+
+        // CALLBACKS
+
+        //Los callback son funciones pasadas como parametros a otra funcion.
+
+        //Ejemplo:
+
+     /*   function dimeDatos(datos){
+
+            console.log(datos());
+        }
+        
+        var datos = () => {
+
+            return `Me llamo Luis`;
+        }
+*/
+
+        // ejecutamos la funcion
+
+        //dimeDatos(datos()); 
+
+
+        // Otro ejemplo de callback
+
+        function news(tiempo){
+
+            console.log(tiempo());
+        }
+
+        var tiempo = function(){
+
+            return "Hace un tiempo malo"
+        }
+
+        news(tiempo)
+
+
+        // Otro ejemplo de callbacks con parametro
+        // Sintaxis callback parametros:
+
+            /**
+            
+                function name(@param1, callback @param2){
+
+                    callback(@param1)
+                }
+
+
+                var @param2  =  function(@param1){
+
+                    console.log("Hola" + @param2);
+                }
+            
+
+                name(@param1, callback @param2)
+            
+            */
+
+
+        function adios(nombre, message){  
+
+            message(nombre);
+        }
+
+
+        var message = function(nombre) {
+
+           console.log(`Adios ${nombre}`)
+        }
+
+
+        adios('Luis', message)
+
+
+        // otro mas
+
+        function miMoto(name, callback){
+
+            callback(name);
+        }
+
+
+        var moto = function (name){
+
+            console.log(`Mi moto es una ${name}`);
+        }
+
+
+        // Ejecutamos
+
+        miMoto('Ducati', moto);
+
+       
+
+    </script>
+    
+</body>
+</html>
