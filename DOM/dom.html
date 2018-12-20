@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+    
+        .titulo {
+
+            color:red;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <h1  id="titulo1">Estamos en el DOM</h1>
+
+    <a href="https://www.google.es" id="enlace">Ir al link</a> <!--Cambio de atributo-->
+
+    <button id="boton">Cambiar texto</button>
+    <input type="text" name="" id="frase">
+
+
+<script>
+
+    // Vamos a cambiar el texto de una etiqueta HTML
+
+    var texto = "Hola desde el infierno";
+
+    const title = document.getElementById('titulo1');
+    const boton = document.getElementById('boton')
+    const frase = document.getElementById('frase')
+
+    console.log(frase)
+
+    console.log(title.innerHTML = texto)
+
+    boton.addEventListener('click', function(e){
+
+        title.innerHTML = 'Has hecho click en el boton!'
+        
+        if(!title.classList.contains('titulo')){
+
+            title.classList.add('titulo')
+            console.log(frase.value)    
+
+        }else{
+
+            title.classList.remove('titulo')
+        }
+        
+    })
+
+
+    // Creando un elemento HTML desde Javascript
+
+    const p = document.createElement('h6')
+    p.innerText = 'Hola desde un h6'
+    console.log(p)
+
+    const h = document.createTextNode("Un nuevo parrafo")
+    console.log(h)
+    
+
+    // anadir un atributo a un elemento HTML
+
+    // setAttribute(nameAtributte, valueAtributte)
+
+    const enlace= document.getElementById('enlace')
+    enlace.setAttribute('href', 'https://www.abc.es')
+
+
+    // Vamos a crear un boton
+
+    const b = document.createElement('button')
+    b.setAttribute("id", 'miBoton')
+    b.setAttribute("value", 'Puedes Clickear aqui!')
+    
+
+
+</script>
+</body>
+</html>
