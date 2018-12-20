@@ -25,17 +25,39 @@
             </div>
         </div> 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <button type="button" class="btn btn-primary">Trigger event!!</button>
-            </div>
-        </div>
-    </div>   
+        <div id="mi_mensaje" style="width:200px;height:200px; background-color: deeppink"></div>
+        <p id="parrafo">parrafo sin cambiar</p>
 <script>
-    // Delegacion de eventos
-
     
+    const parrafo = document.getElementById('parrafo')
+
+    parrafo.addEventListener('mouseover', function(e){
+
+        parrafo.innerHTML = 'parrafo cambiado'
+    })
+
+    // Ejemplo con setInterval
+
+    var procesoID;
+
+    var b = 
+    getElementById('mi_mensaje');
+    b.addEventListener(
+        'click',
+        detenerCambioDeColor
+    )
+    
+
+    function alternarColor() { 
+    var b = document.getElementById("mi_mensaje"); 
+    b.style.backgroundColor = b.style.backgroundColor == "deeppink" ? "lightgreen" : "deeppink"; 
+    } 
+
+    function detenerCambioDeColor() { 
+    clearInterval(procesoID); 
+    }
+
+    procesoID = setInterval(alternarColor, 2000);
 
 
 </script>
